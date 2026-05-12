@@ -1,0 +1,870 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    user-select: none;
+}
+
+:root{
+    --mobilebg: rgb(223,240,248);
+    --purewhite: rgb(255, 255, 255);
+    --bdefault: 1px solid black;
+    --lightblack: rgb(19, 48, 64);
+    --greytext: rgb(98, 109, 115);
+    --basicwidth: 360px;
+    --darkyellow: rgb(217, 219, 47);
+    --lightblue: rgb(225, 245, 252);
+    --focusgrey: rgb(107, 107, 107);
+    --borderoutline: rgb(163, 163, 163);
+    --lightyellow: rgb(250, 250, 224);
+    --mobileftmargin: 25px;
+    --divaroundinput: 325px;
+}
+
+.mortgageWholeBody{
+    background-color: var(--mobilebg);
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mortgageCalcBody{
+    /* border: var(--bdefault); */
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    width: 800px;
+    height: 500px;
+    background-color: var(--purewhite);
+    position: relative;
+}
+
+.mortgageCalcTitle{
+    width: var(--basicwidth);
+    margin-left: 20px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.mortgageCalcTitle p{
+    font-size: 25px;
+    font-weight: bold;
+    font-family: sans-serif, 'Arial Narrow Bold', 'Plus Jakarta Sans';
+    user-select: none;
+}
+
+.mortgageCalcTitle button{
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+    color: var(--greytext);
+    text-decoration: underline;
+    transition: transform, 0.3s ease-out;
+    opacity: 0.5;
+}
+
+.mortgageCalcTitle button:hover{
+    color: var(--lightblack);
+    transform: translateX(3px);
+    opacity: 1; 
+}
+
+.mortgageamount{
+    margin-top: 30px;
+    width: var(--basicwidth);
+    margin-left: 20px;
+    position: relative;
+}
+
+.mortgageamountpc{
+    color: var(--greytext);
+    font-size: 13px;
+    user-select: none;
+}
+
+.realdiv{
+    border: 2px solid var(--borderoutline);
+    margin-top: 10px;
+    width: var(--basicwidth);
+    height: 6vh;
+    border-radius: 6px;
+    position: relative;
+}
+
+.realdiv:hover{
+    border-color: black;
+}
+
+.realdiv input:hover{
+    cursor: pointer;
+}
+
+
+.nairabg{
+    background-color: var(--lightblue);
+    height: 5.9vh;
+    width: 50px;
+    font-size: 25px;
+    border-top-left-radius: 3px;
+    color: var(--greytext);
+    border-bottom-left-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    z-index: 0;
+    top: 0px;
+    left: 0px;
+    user-select: none;
+}
+
+
+.error1st{
+    display: none;
+    color: red;
+    font-size: 12px;
+}
+
+
+.error1st.error{
+    display: block;
+}
+
+.number1st{
+    display: none;
+    color: red;
+    font-size: 12px;
+}
+
+.number1st.error{
+    display: block;
+}
+
+.mortgageamountinput{
+    width: 300px;
+    margin-left: 60px;
+    height: 6vh;
+    border: none;
+    border-radius: 6px;
+    font-size: 2.5vh;
+}
+
+.realdiv.error{
+    animation: shake 0.4s;
+}
+
+@keyframes shake{
+    0% {transform: translateX(0);}
+    25%{transform: translateX(-5px);}
+    50%{transform: translateX(5px);}
+    75%{transform: translateX(-5px);}
+    100%{transform: translateX(0);}
+}
+
+.realdiv:focus-within{
+    border-color: var(--darkyellow);
+}
+
+.realdiv input:focus + .nairabg{
+    background-color: var(--darkyellow);
+}
+
+.nairabg.error{
+    background-color: red;
+}
+
+.realdiv.error{
+    border-color: red;
+}
+
+.mortgageamount input:focus{
+    outline: none ;
+}
+
+.mortgagetermtitle{
+    width: 285px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.mortgagetermpc{
+    color: var(--greytext);
+    font-size: 13px;
+    user-select: none;
+}
+
+.mortgagepercentage{
+    color: var(--greytext);
+    font-size: 13px;
+    user-select: none; 
+}
+
+.fakediv2{
+    height: 6vh;
+    width: var(--basicwidth);
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+
+.fakediv2child1{
+    width: 165px;
+    position: relative;
+    height: 6vh;
+    border-radius: 8px;
+    border: 2px solid green;
+    border-color: var(--borderoutline);
+}
+
+.fakediv2child1.error{
+    animation: shake2 0.4s;
+}
+
+@keyframes shake2{
+    0% {transform: translateX(0);}
+    25%{transform: translateX(-5px);}
+    50%{transform: translateX(5px);}
+    75%{transform: translateX(-5px);}
+    100%{transform: translateX(0);}
+}
+
+.fakediv2child1:hover{
+    border-color: black;
+}
+
+.fakediv2child1 input:hover{
+    cursor: pointer;
+}
+
+.fakediv2child1:focus-within{
+    border-color: var(--darkyellow);
+}
+
+.fakediv2child1 input:focus + .yearsbg{
+    background-color: var(--darkyellow);
+}
+
+.fakediv2child1.error{
+    border-color: red;
+}
+
+.yearsbg{
+    position: absolute;
+    background-color: var(--lightblue);
+    height: 6vh;
+    width: 50px;
+    margin-top: -1px;
+    font-size: 15px;
+    color: var(--greytext);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 1px;
+    left: 0px;
+    user-select: none;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+}
+
+.yearsbg.error{
+    background-color: red;
+}
+
+.error2nd{
+    display: none;
+    font-size: 12px;
+    color: red;
+}
+
+.error2nd.error{
+    display: block;
+}
+
+.number2nd{
+    display: none;
+    font-size: 12px;
+    color: red;
+}
+
+.number2nd.error{
+    display: block;
+}
+
+.yearsbginput{
+    margin-left: 55px;
+    border-radius: 10px;
+    display: block;
+    width: 110px;
+    height: 5.9vh;
+    border: none;
+    font-size: 2.5vh;
+}
+
+.fakediv2child2{
+    width: 165px;
+    border-radius: 8px;
+    height: 6vh;
+    position: relative;
+    border: 2px solid green;
+    border-color: var(--borderoutline);
+}
+
+.fakediv2child2.error{
+    animation: shake3 0.4s;
+}
+
+@keyframes shake3{
+    0% {transform: translateX(0);}
+    25%{transform: translateX(-5px);}
+    50%{transform: translateX(5px);}
+    75%{transform: translateX(-5px);}
+    100%{transform: translateX(0);}
+}
+
+.fakediv2child2:hover{
+    border-color: black;
+}
+
+.fakediv2child2 input{
+    cursor: pointer;
+}
+
+.fakediv2child2 input:focus + .percentagebg{
+    background-color: var(--darkyellow);
+}
+
+.fakediv2child2:focus-within{
+    border-color: var(--darkyellow);
+}
+
+.fakediv2child2.error{
+    border-color: red;
+}
+
+.percentagebg{
+    position: absolute;
+    background-color: var(--lightblue);
+    height: 6vh;
+    width: 50px;
+    font-size: 25px;
+    display: flex;
+    top: 0;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    margin-left: 115px;
+}
+
+.percentagebg.error{
+    background-color: red;
+}
+
+.error3rd{
+    display: none;
+    font-size: 12px;
+    color: red;
+}
+
+.error3rd.error{
+    display: block;
+}
+
+.number3rd{
+    display: none;
+    font-size: 12px;
+    color: red;
+}
+
+.number3rd.error{
+    display: block;
+}
+
+.percentagebginput{
+    width: 110px;
+    height: 6vh;
+    border-radius: 8px;
+    font-size: 2.5vh;
+    border: none;
+}
+
+
+/* .yearsbginput:focus{
+    outline: 2px solid grey;
+    all: none;
+    height: 4.9vh;
+    border: 2px solid grey;
+    border-left: none;
+    transform: scaleY(1.08);
+    margin-left: 50px;
+    margin-right: 57px;
+    opacity: 1;
+    transition: transform 0.3s ease-out;
+    padding-top: 20px;
+    } */
+    
+    /* .percentagebginput{
+        border: none;
+    border-top: 1px solid grey;
+    border-bottom: 1px solid grey;
+    border-left: 1px solid grey;
+    opacity: 0.8;
+} */
+
+/* .percentagebginput:focus{
+    outline: 2px solid grey;
+    all: none;
+    height: 4.9vh;
+    border: 2px solid grey;
+    border-right: none;
+    transform: scaleY(1.08); 
+    opacity: 1;
+    transition: transform 0.3s ease-out;
+} */
+
+/* .mortgagetype{
+    border: 1px solid black;
+} */
+
+.mortgagetypetitle{
+    font-size: 14px;
+    color: var(--greytext);
+    font-family: sans-serif, 'Arial Narrow Bold', 'Plus Jakarta Sans';
+    user-select: none;
+    margin-bottom: 10px;
+}
+
+.repayment{
+    border: 2px solid;
+    margin-bottom: 10px;
+    height: 5vh;
+    display: flex;
+    align-items: center;
+    border-radius: 6px;
+    border-color: var(--borderoutline);
+}
+
+.repayment:hover{
+    border-color: var(--darkyellow);
+}
+
+.repayment:has(input:checked){
+    border-color: var(--darkyellow);
+    background-color: var(--lightyellow);
+}
+
+.repayment input{
+    accent-color: var(--darkyellow);
+    width: 17px;
+    height: 17px;
+    margin-left: 12px;
+}
+
+.repayment label{
+    font-size: 16px;
+    margin-left: 20px;
+    width: 100%;
+}
+
+.interest{
+    border: 2px solid;
+    display: flex;
+    align-items: center;
+    border-radius: 6px;
+    height: 5vh;
+    border-color: var(--borderoutline);
+}
+
+.interest:hover{
+    border-color: var(--darkyellow);
+}
+
+.interest:has(input:checked){
+    border-color: var(--darkyellow);
+    background-color: var(--lightyellow);
+}
+
+.interest input{
+    accent-color: var(--darkyellow);
+    width: 17px;
+    height: 17px;
+    margin-left: 12px;
+}
+
+.interest label{
+    font-size: 16px;
+    margin-left: 20px;
+    width: 100%;
+}
+
+.error4th{
+    margin-top: 5px;
+    display: none;
+    font-size: 12px;
+    color: red;
+}
+
+.error4th.error{
+    display: block;
+}
+
+.submitbtn{
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+    font-size: 14px;
+    background-color: var(--darkyellow);
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    border-radius: 30px;
+    margin-top: 16px;
+    padding-left: 27px;
+    padding-right: 27px;
+}
+
+
+.mortgageResultBody{
+    /* border: var(--bdefault); */
+    width: 400px;
+    height: 500px;
+    position: absolute;
+    z-index: 2;
+    right: -10px;
+    top: 0px;
+    background-color: var(--lightblack);
+    border-bottom-left-radius: 80px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.resultshownhere{
+    display: none;
+    color: white;
+    user-select: none;
+    margin-bottom: 20px;
+    width: 340px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.resultshownhere.active{
+    display: flex;
+}
+
+.ResultsShownhere{
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.Completetheform{
+    font-size: 12px;
+    text-align: center;
+}
+
+.repaymentsresults{
+    align-self: flex-start;
+    display: none;
+    color: white;
+    flex-direction: column;
+    margin-top: 40px;
+    width: 340px;
+}
+
+.repaymentsresults.active{
+    display: flex;
+}
+
+.yourResults{
+    font-size: 16px;
+    margin-bottom: 16px;
+}
+
+.yourResultsDesc{
+    font-size: 12.8px;
+    font-weight: 100;
+    color: rgb(224, 224, 224);
+    margin-bottom: 30px;
+}
+
+.resultbody{
+    border-top: 3px solid var(--darkyellow);
+    border-radius: 6px;
+    border-radius: 6px;
+    background-color: rgb(14, 36, 49);
+    height: 250px;
+    border-radius: 6px;
+    border-radius: 6px;
+    overflow: auto;
+}
+
+.yourmonthlyrepayments{
+    color: rgb(224, 224, 224);
+    font-size: 12.8px;
+    margin-top: 30px;
+    margin-left: 30px;
+    margin-bottom: 10px;
+}
+
+.yourmonthlymoney{
+    margin-left: 30px;
+    font-size: 50px;
+    color: var(--darkyellow);
+    margin-bottom: 20px;
+}
+
+.empty1pxline{
+    border: 1px solid rgb(50, 72, 85);
+    width: 280px;
+    margin-left: 30px;
+    border-bottom: none;
+    margin-bottom: 20px;
+}
+
+.totalyougopay{
+    margin-left: 30px;
+    color: rgb(224, 224, 224);
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+.totalnaira{
+    margin-left: 30px;
+    font-size: 22px;
+}
+
+@media screen and (max-width: 900px){
+    
+    body{
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    .mortgageWholeBody{
+        flex-direction: column;
+        justify-content: start;
+        height: 100vh;
+    }
+
+    .mortgageCalcBody{
+        width: 375px;
+        position: static;
+        height: 100vh;
+        min-height: 450px;
+        border-radius: initial;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .mortgageCalcTitle{
+        align-items: start;
+        flex-direction: column;
+        margin-left: var(--mobileftmargin);
+        gap: 10px;
+    }
+
+    .mortgageamount{
+        margin-top: 10px;
+    }
+
+    .mortgageCalcTitle p{
+        font-size: 20px;
+    }
+
+    .mortgageamount{
+        width: 375px;
+        margin-left: 0px;
+    }
+
+    .mortgageamountpc{
+        margin-left: var(--mobileftmargin);
+    }
+
+    .realdiv{
+        margin-left: var(--mobileftmargin);
+        width: var(--divaroundinput);
+        height: 3vh;
+    }
+    .nairabg{
+        height: 3vh;
+    }
+
+    .realdiv input{
+        width: 265px;
+        height: 3vh;
+    }
+
+    .fakediv2{
+        flex-direction: column;
+        width: 375px;
+        margin-bottom: 70px;
+        gap: 40px;
+    }
+
+    .mortgagetermtitle{
+        flex-direction: column;
+        position: relative;
+        margin-top: 10px;
+        margin-left: var(--mobileftmargin);
+    }
+
+    .mortgagetermtitle label:nth-child(2){
+        position: absolute;
+        top: 70px;
+    }
+
+    .fakediv2child1{
+        width: var(--divaroundinput);
+        margin-left: var(--mobileftmargin);
+        height: 3vh;
+    }
+
+    .yearsbg{
+        height: 3vh;
+    }
+
+    .fakediv2child1 input{
+        height: 3vh;
+        width: 265px;
+    }
+
+    .fakediv2child2{
+        width: var(--divaroundinput);
+        margin-left: var(--mobileftmargin);
+    }
+
+    .fakediv2child2 input{
+        height: 3vh;
+        width: 265px;
+        margin-left: 55px;
+    }
+
+    .percentagebg{
+        margin-left: 0px;
+        height: 3vh;
+        border-radius: 6px;
+        border-top-right-radius: 0px;
+        border-bottom-right-radius: 0px;
+    }
+
+    .mortgagetype{
+        width: 375px;
+    }
+
+    .mortgagetypetitle{
+        margin-left: var(--mobileftmargin);
+    }
+
+    .repayment{
+        width: var(--divaroundinput);
+        margin-left: var(--mobileftmargin);
+        height: 3vh;
+    }
+
+    .interest{
+        width: var(--divaroundinput);
+        margin-left: var(--mobileftmargin);
+        height: 3vh;
+    }
+
+    .submitbtn{
+        width: var(--divaroundinput);
+        font-size: 20px;
+        margin-left: var(--mobileftmargin);
+    }
+
+    .mortgageResultBody{
+        position: static;
+        width: 375px;
+        border-radius: initial;
+        height: 38vh;
+    }
+
+    .resultshownhere{
+        width: var(--divaroundinput);
+        height: 100%;
+        align-self: flex-start;
+    }
+
+    .resultshownhere img{
+        width: 150px;
+        height: 150px;
+    }
+
+    .ResultsShownhere{
+        font-size: 19.66px;
+    }
+
+    .Completetheform{
+        font-size: 15px;
+        width: var(--divaroundinput);
+        color: rgba(255, 255, 255, 0.8);
+    }
+
+    .repaymentsresults{
+        height: 100%;
+        width: var(--divaroundinput);
+        margin-top: 20px;
+    }
+
+    .yourResults{
+        font-size: 17px;
+        margin-top: 0px;
+        margin-bottom: 12px;
+    }
+
+    .yourResultsDesc{
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 12px;
+        margin-bottom: 20px;
+    }
+
+    .resultbody{
+        height: 21vh;
+    }
+
+    .yourmonthlyrepayments{
+        margin-top: 20px;
+        font-size: 11px;
+    }
+
+    .yourmonthlymoney{
+        font-size: 33px;
+        margin-bottom: 10px;
+    }
+
+    .empty1pxline{
+        margin-bottom: 10px;
+    }
+
+}
+
+@media screen and (max-height: 750px) {
+    .mortgageCalcTitle{ 
+        margin-top: 10px;
+    }
+}
+
+@media screen and (max-height: 720px) {
+    .mortgageWholeBody{
+        overflow: auto;
+    }
+    .mortgagetypetitle{
+        margin-top: -10px;
+    }
+    .mortgageResultBody{
+        overflow: auto;
+        margin-top: -10px;
+    }
+}
