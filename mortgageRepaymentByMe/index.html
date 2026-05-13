@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mortgage Repayment</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section class="mortgageWholeBody">
+        <div class="mortgageCalcBody">
+            <form autocomplete="off" novalidate id="theform">
+                <div class="mortgageCalcTitle">
+                    <p>Mortgage Calculator</p>
+                    <button type="reset" class="reset">Clear all</button>
+                </div>
+                <div class="mortgageamount">
+                    <label for="mortgageamountp" class="mortgageamountpc">Mortgage Amount</label>
+                    <div class="realdiv">
+                        <input type="text" id="mortgageamountp" inputmode="numeric" class="mortgageamountinput">
+                        <div class="nairabg">
+                            <p>₦</p>
+                        </div>
+                        <span class="error1st">Field required</span>
+                        <span class="number1st">Pls Enter a number</span>
+                    </div>
+                    <div class="mortgagetermtitle">
+                        <label for="mortgageterm" class="mortgagetermpc">Mortgage Term</label>
+                        <label for="mortgagepercentage" class="mortgagepercentage">Interest Rate</label>
+                    </div>
+                    <div class="fakediv2">
+                        <div class="fakediv2child1">
+                            <input type="text" id="mortgageterm" inputmode="numeric" class="yearsbginput">
+                            <div class="yearsbg">
+                                <p>years</p>
+                            </div>
+                            <span class="error2nd">Field required</span>
+                            <span class="number2nd">Pls Enter a number</span>
+                        </div>
+                        <div class="fakediv2child2">
+                            <input type="text" required id="mortgagepercentage" inputmode="numeric" class="percentagebginput ">
+                            <div class="percentagebg">
+                                <p>%</p>
+                            </div>
+                            <span class="error3rd">Field required</span>
+                            <span class="number3rd">Pls Enter a number</span>
+                        </div>
+                    </div>
+                    <div class="mortgagetype">
+                        <p class="mortgagetypetitle">Mortgage Type</p>
+                        <div class="repayment">
+                            <input type="radio" required name="mt" value="0" id="repayoption">
+                            <label for="repayoption" style="user-select: none;">Repayment</label>
+                        </div>
+                        <div class="interest">
+                            <input type="radio" required name="mt" value= "1" id="interestoption">
+                            <label for="interestoption" style="user-select: none;">Interest Only</label>
+                        </div>
+                        <span class="error4th">Field required</span>
+                    </div>
+                    <button type="submit" class="submitbtn"><img src="./images/icon-calculator.svg" alt=""> Calculate Repayments</button>
+                </div>
+            </form>
+            <div class="mortgageResultBody">
+                <div class="resultshownhere active">
+                    <img src="./images/illustration-empty.svg" alt="">
+                    <p class="ResultsShownhere">Results Shown Here</p>
+                    <p class="Completetheform">Complete the form and click "calculate repayments" to see  what your  monthly repayments would be.</p>
+                </div>
+                <div class="repaymentsresults">
+                    <p class="yourResults">Your Results</p>
+                    <p class="yourResultsDesc">Your Results are shown below on the informaton you provided. To adjust the results , edit the form and click "calculate repayments" again</p>
+                    <div class="resultbody">
+                        <p class="yourmonthlyrepayments">Your Monthly Repayments</p>
+                        <p class="yourmonthlymoney">₦0.00</p>
+                        <div class="empty1pxline"></div>
+                        <p class="totalyougopay">Total you'll repay over the term</p>
+                        <p class="totalnaira">₦0.00</p>
+                    </div>
+                </div>
+                <div class="interestresults">
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="app.js"></script>
+</body>
+</html>
